@@ -12,3 +12,4 @@
 - Added untrusted-source, privacy, professional-confirmation, and public-release safeguards.
 - Added public GitHub marketplace metadata, contribution governance, issue forms, CODEOWNERS, and pull-request guidance.
 - Made brand-asset CI verification compare decoded pixels instead of platform-dependent PNG compression bytes.
+- Updated official GitHub Actions to their current Node 24-based major versions.
