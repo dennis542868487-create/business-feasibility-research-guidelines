@@ -59,8 +59,12 @@ def main() -> int:
         "--plugin-root",
         default=str(Path(__file__).resolve().parents[1] / "plugins" / "business-feasibility-research-guidelines"),
     )
+    parser.add_argument(
+        "--output-dir",
+        help="Write generated PNG files here instead of the Plugin assets directory.",
+    )
     args = parser.parse_args()
-    asset_dir = Path(args.plugin_root) / "assets"
+    asset_dir = Path(args.output_dir) if args.output_dir else Path(args.plugin_root) / "assets"
     asset_dir.mkdir(parents=True, exist_ok=True)
     render(256).save(asset_dir / "icon.png", optimize=True)
     render(1024).save(asset_dir / "logo.png", optimize=True)

@@ -11,3 +11,4 @@
 - Added positive and negative behavior Evals, CI, release packaging, and SHA-256 checksums.
 - Added untrusted-source, privacy, professional-confirmation, and public-release safeguards.
 - Added public GitHub marketplace metadata, contribution governance, issue forms, CODEOWNERS, and pull-request guidance.
+- Made brand-asset CI verification compare decoded pixels instead of platform-dependent PNG compression bytes.
