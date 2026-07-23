@@ -3,6 +3,12 @@ name: Release
 on:
   push:
     tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing version tag to test, package, and publish
+        required: true
+        type: string
 
 permissions:
   contents: write
@@ -10,11 +16,17 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
+    env:
+      RELEASE_TAG: ${{ inputs.tag || github.ref_name }}
     steps:
       - uses: actions/checkout@v7
+        with:
+          ref: ${{ env.RELEASE_TAG }}
       - uses: actions/setup-python@v7
         with:
           python-version: "3.11"
+      - name: Install development dependencies
+        run: python -m pip install --requirement requirements-dev.txt
       - name: Run tests and validation
         run: |
           python -m unittest discover -s tests -v
@@ -24,4 +36,4 @@ jobs:
       - name: Publish GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "$GITHUB_REF_NAME" releases/*.zip releases/checksums.txt --generate-notes --verify-tag
+        run: gh release create "$RELEASE_TAG" releases/*.zip releases/checksums.txt --generate-notes --verify-tag
