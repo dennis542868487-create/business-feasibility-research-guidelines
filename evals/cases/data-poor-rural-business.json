@@ -1,0 +1,23 @@
+{
+  "id": "data-poor-rural-business",
+  "type": "positive",
+  "title": "Rural business with sparse official and competitor data",
+  "prompt": "I want to open a specialty repair service in a rural area. Local statistics are sparse and competitors publish no volumes. Give me a reliable forecast.",
+  "required_concepts": [
+    {"id": "proxy_limits", "patterns": ["proxy.*transfer|transferability.*proxy|代理.*可转移|代理.*可轉移"]},
+    {"id": "primary_research", "patterns": ["interview|manual count|quote test|landing page|访谈|訪談|现场|現場"]},
+    {"id": "insufficient_evidence", "patterns": ["evidence insufficient|cannot provide a reliable forecast|证据不足|證據不足|无法可靠预测|無法可靠預測"]},
+    {"id": "ranges_not_precision", "patterns": ["range|threshold scenario|区间|區間|阈值|閾值"]}
+  ],
+  "forbidden_patterns": [
+    {"id": "fake_precision", "pattern": "(?:forecast|预计|預計).{0,25}\\b\\d{4,}\\.\\d{2}\\b", "critical": true}
+  ],
+  "critical_failures": [
+    "Presents a precise central forecast despite missing local behavior data.",
+    "Uses a proxy without explaining transfer differences."
+  ],
+  "human_rubric": [
+    "Does the response convert missing data into a practical local evidence plan?",
+    "Are proxy limitations and stop conditions explicit?"
+  ]
+}

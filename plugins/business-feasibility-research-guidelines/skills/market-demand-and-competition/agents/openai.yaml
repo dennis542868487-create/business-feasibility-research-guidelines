@@ -1,0 +1,4 @@
+interface:
+  display_name: "Market Demand and Competition"
+  short_description: "Test demand, funnels, competitors, and substitutes"
+  default_prompt: "Use $market-demand-and-competition to test demand and competitive assumptions for this business."

@@ -1,0 +1,54 @@
+name: Bug report
+description: Report a reproducible error in a Skill, script, package, or documented workflow.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Do not include credentials, customer records, private reports, or other sensitive data.
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: v0.1.0
+    validations:
+      required: true
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Surface
+      options:
+        - ChatGPT Work mode
+        - Codex desktop
+        - Codex CLI
+        - Standalone Skill
+        - Manual Mode
+        - Repository tooling
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Provide a minimal prompt, command, or synthetic fixture and the steps to reproduce.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Data-safety confirmation
+      options:
+        - label: I removed secrets, personal data, and confidential business information.
+          required: true

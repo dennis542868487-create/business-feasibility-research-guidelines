@@ -1,0 +1,4 @@
+interface:
+  display_name: "Operational and Financial Feasibility"
+  short_description: "Model capacity, unit economics, cash, and risk"
+  default_prompt: "Use $operational-financial-feasibility to test capacity, unit economics, break-even, and cash risk."

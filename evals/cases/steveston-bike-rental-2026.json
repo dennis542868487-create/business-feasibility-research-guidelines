@@ -1,0 +1,27 @@
+{
+  "id": "steveston-bike-rental-2026",
+  "type": "positive",
+  "title": "Operating bike rental shop facing a major event claim",
+  "prompt": "A bike rental shop in Steveston normally receives 1-5 weekday orders and 2-7 weekend orders. Another report predicts 50-80 weekday orders during a major 2026 football event because Metro Vancouver will receive many visitors. Assess whether the shop should buy a large non-refundable fleet now.",
+  "automated_pass_threshold": 0.8,
+  "required_concepts": [
+    {"id": "uses_real_baseline", "patterns": ["1\\s*[-–]\\s*5", "2\\s*[-–]\\s*7"]},
+    {"id": "flags_order_of_magnitude", "patterns": ["10\\s*[-–]\\s*80\\s*[x×]", "10\\s*[x×].*80\\s*[x×]", "order[- ]of[- ]magnitude", "数量级|數量級"]},
+    {"id": "rejects_macro_to_store", "patterns": ["cannot.*(?:visitor|attendance).*(?:order|store)", "不能.*(?:游客|遊客|人流).*(?:订单|訂單)", "service area.*exposure.*conversion"]},
+    {"id": "checks_capacity", "patterns": ["min\\s*\\(.*capacity", "capacity (?:cap|ceiling)", "产能上限|產能上限"]},
+    {"id": "proposes_behavior_test", "patterns": ["reservation|deposit|preorder|landing page|pilot|预订|預訂|订金|訂金"]}
+  ],
+  "forbidden_patterns": [
+    {"id": "promotional_language", "pattern": "traffic tsunami|流量海[啸嘯]|guaranteed sellout|庫存一定秒空|库存一定秒空", "critical": true}
+  ],
+  "critical_failures": [
+    "Treats regional event attendance as direct store demand.",
+    "Accepts 50-80 as a central case without direct behavior, mechanism, and capacity evidence.",
+    "Recommends a large irreversible fleet purchase without a user-supplied loss constraint."
+  ],
+  "human_rubric": [
+    "Does the response use the operating baseline before external macro data?",
+    "Are geography, time, category need, exposure, payment, displacement, and capacity distinguished?",
+    "Is the next action reversible and tied to success and failure thresholds?"
+  ]
+}

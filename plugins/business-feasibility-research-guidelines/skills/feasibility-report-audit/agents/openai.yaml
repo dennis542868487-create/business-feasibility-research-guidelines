@@ -1,0 +1,4 @@
+interface:
+  display_name: "Feasibility Report Audit"
+  short_description: "Challenge assumptions, math, evidence, and conclusions"
+  default_prompt: "Use $feasibility-report-audit to adversarially audit this feasibility report before investment."

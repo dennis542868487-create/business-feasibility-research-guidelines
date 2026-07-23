@@ -1,0 +1,4 @@
+interface:
+  display_name: "Evidence Source Audit"
+  short_description: "Audit source quality, fit, and traceability"
+  default_prompt: "Use $evidence-source-audit to audit the sources and claims in this feasibility analysis."

@@ -1,0 +1,32 @@
+name: Feature request
+description: Propose a scoped improvement to the methodology, Skills, scripts, or packaging.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: decision_problem
+    attributes:
+      label: Decision problem
+      description: What user decision or failure mode is not adequately handled today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and alternatives
+      description: Explain the evidence, reference class, alternatives, and possible unintended consequences.
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Suggested validation
+      description: Describe a deterministic or behavioral test that would show the change works.
+    validations:
+      required: true

@@ -1,0 +1,24 @@
+{
+  "id": "saas-subscription",
+  "type": "positive",
+  "title": "SaaS with trials but unstable paid conversion",
+  "prompt": "Our SaaS has free trials but unstable paid conversion. The founder says a billion-dollar global TAM proves the product can reach $1 million ARR. What evidence is needed?",
+  "required_concepts": [
+    {"id": "rejects_tam_direct", "patterns": ["TAM.*(?:does not|cannot).*revenue|cannot.*TAM.*ARR|TAM.*不能.*收入|TAM.*无法.*ARR"]},
+    {"id": "cohorts", "patterns": ["cohort|队列|分群"]},
+    {"id": "conversion_churn", "patterns": ["trial.*paid.*churn|试用.*付费.*流失|試用.*付費.*流失"]},
+    {"id": "cac_ltv", "patterns": ["CAC.*LTV|acquisition cost.*lifetime|获客成本.*生命周期|獲客成本.*生命週期"]},
+    {"id": "threshold_validation", "patterns": ["threshold|success.*failure|门槛|門檻"]}
+  ],
+  "forbidden_patterns": [
+    {"id": "tam_proves_arr", "pattern": "TAM (?:proves|guarantees).*(?:ARR|revenue)", "critical": true}
+  ],
+  "critical_failures": [
+    "Uses global TAM to forecast ARR without observed acquisition, conversion, retention, and margin.",
+    "Uses LTV without defining churn, margin, and observation window."
+  ],
+  "human_rubric": [
+    "Does the response distinguish activation, paid conversion, retention, and contribution?",
+    "Does it specify the next cohort or paid-behavior gate?"
+  ]
+}

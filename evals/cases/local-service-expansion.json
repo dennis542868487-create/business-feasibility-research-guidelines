@@ -1,0 +1,22 @@
+{
+  "id": "local-service-expansion",
+  "type": "positive",
+  "title": "Operating local service considering two hires",
+  "prompt": "My home-repair service is operating and I am considering hiring two technicians and doubling ad spend. I have 18 months of invoices, lead records, technician hours, travel times, cancellations, and ad costs. Assess the expansion.",
+  "required_concepts": [
+    {"id": "uses_history", "patterns": ["18 months|historical.*invoice|internal.*transaction|历史.*发票|歷史.*發票"]},
+    {"id": "utilization_capacity", "patterns": ["utilization|billable hour|technician capacity|利用率|可计费|可計費"]},
+    {"id": "service_radius", "patterns": ["travel time|service radius|服务半径|服務半徑"]},
+    {"id": "cash_and_contribution", "patterns": ["contribution.*cash|cash.*contribution|毛利.*现金流|貢獻.*現金流"]},
+    {"id": "staged_hiring", "patterns": ["staged.*hir|hire one|分阶段.*招聘|分階段.*招聘|先招聘一"]}
+  ],
+  "forbidden_patterns": [],
+  "critical_failures": [
+    "Ignores the supplied operating history in favor of external market size.",
+    "Recommends both hires without capacity, lead conversion, contribution, or cash timing."
+  ],
+  "human_rubric": [
+    "Does the response check internal data quality and seasonality?",
+    "Does the staged option have measurable gates?"
+  ]
+}

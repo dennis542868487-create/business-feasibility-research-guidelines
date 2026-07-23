@@ -1,0 +1,44 @@
+{
+  "name": "business-feasibility-research-guidelines",
+  "version": "0.1.0",
+  "description": "Evidence-first, auditable business feasibility research with reproducible calculations and explicit decision gates.",
+  "author": {
+    "name": "Dennis Zhang and contributors",
+    "url": "https://github.com/dennis542868487-create"
+  },
+  "homepage": "https://github.com/dennis542868487-create/business-feasibility-research-guidelines",
+  "repository": "https://github.com/dennis542868487-create/business-feasibility-research-guidelines",
+  "license": "MIT",
+  "keywords": [
+    "business-feasibility",
+    "market-research",
+    "small-business",
+    "forecasting",
+    "risk-analysis",
+    "evidence"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Business Feasibility Research Guidelines",
+    "shortDescription": "Evidence-first feasibility research and report audit",
+    "longDescription": "Plan, conduct, calculate, and adversarially audit business feasibility research using traceable evidence, coherent units, capacity-capped demand, explicit uncertainty, and staged decision gates.",
+    "developerName": "Dennis Zhang and contributors",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Research",
+      "Analyze"
+    ],
+    "websiteURL": "https://github.com/dennis542868487-create/business-feasibility-research-guidelines",
+    "privacyPolicyURL": "https://github.com/dennis542868487-create/business-feasibility-research-guidelines/blob/main/PRIVACY.md",
+    "termsOfServiceURL": "https://github.com/dennis542868487-create/business-feasibility-research-guidelines/blob/main/TERMS.md",
+    "defaultPrompt": [
+      "Assess whether this business decision has enough evidence for the next investment gate.",
+      "Audit this feasibility report for weak sources, unit errors, and unsupported assumptions.",
+      "Create an evidence-first validation plan for this pre-launch business idea."
+    ],
+    "brandColor": "#0F766E",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png"
+  }
+}

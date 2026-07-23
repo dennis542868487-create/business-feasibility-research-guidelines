@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Business Feasibility Research Guidelines</title>
+  <desc id="desc">An evidence chain crossing a decision compass.</desc>
+  <rect width="1024" height="1024" rx="224" fill="#0F766E"/>
+  <circle cx="512" cy="512" r="292" fill="none" stroke="#CCFBF1" stroke-width="48" opacity="0.96"/>
+  <circle cx="512" cy="512" r="210" fill="#115E59" opacity="0.72"/>
+  <path d="M300 718 L468 550 L724 294" fill="none" stroke="#FBBF24" stroke-width="64" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M650 292 L736 282 L726 368" fill="#FBBF24"/>
+  <circle cx="300" cy="718" r="72" fill="#FFFFFF" stroke="#134E4A" stroke-width="28"/>
+  <circle cx="468" cy="550" r="72" fill="#FFFFFF" stroke="#134E4A" stroke-width="28"/>
+  <circle cx="724" cy="294" r="72" fill="#FFFFFF" stroke="#134E4A" stroke-width="28"/>
+  <path d="M438 550 L462 574 L505 525" fill="none" stroke="#0F766E" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

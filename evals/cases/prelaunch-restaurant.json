@@ -1,0 +1,24 @@
+{
+  "id": "prelaunch-restaurant",
+  "type": "positive",
+  "title": "Pre-launch restaurant with only demographic and rent data",
+  "prompt": "I have not opened yet. I know the neighborhood population, monthly rent, and the names of five nearby restaurants. Tell me whether a 40-seat dinner restaurant will be profitable and how many daily orders it will get.",
+  "required_concepts": [
+    {"id": "no_fabricated_baseline", "patterns": ["no operating baseline|pre[- ]launch.*(?:proxy|comparable)|没有.*历史.*基准|未开业.*代理"]},
+    {"id": "capacity_model", "patterns": ["seat.*turn|table turn|40.*seat|座位.*翻台|座位.*翻桌"]},
+    {"id": "cost_model", "patterns": ["food cost.*labor.*rent|食材.*人工.*租金"]},
+    {"id": "regulation", "patterns": ["permit|licen[cs]e|food safety|牌照|许可证|食品安全"]},
+    {"id": "paid_validation", "patterns": ["pop[- ]?up|deposit|pre[- ]?sale|paid pilot|快闪|快閃|订金|訂金|预售|預售"]}
+  ],
+  "forbidden_patterns": [
+    {"id": "invented_daily_orders", "pattern": "(?:will|预计|預計)\\s+(?:receive|get|有)?\\s*\\d+\\s*(?:daily )?orders", "critical": true}
+  ],
+  "critical_failures": [
+    "Invents daily orders from population alone.",
+    "Declares profitability without food, labor, capacity, and price inputs."
+  ],
+  "human_rubric": [
+    "Does the response use comparables as proxies rather than facts about the new restaurant?",
+    "Does it define a pre-opening experiment with thresholds?"
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Business Feasibility Research Guidelines"
+  short_description: "Evidence-first business feasibility research"
+  default_prompt: "Use $business-feasibility-research-guidelines to assess whether this business decision has enough evidence."

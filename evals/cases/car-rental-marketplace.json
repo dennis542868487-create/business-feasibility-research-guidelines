@@ -1,0 +1,24 @@
+{
+  "id": "car-rental-marketplace",
+  "type": "positive",
+  "title": "Pre-launch two-sided car-rental marketplace",
+  "prompt": "I want to launch a peer-to-peer car rental marketplace in a Canadian tourism region. I have tourism totals but no car owners, rental suppliers, customers, or transactions. Is the market large enough?",
+  "required_concepts": [
+    {"id": "separate_sides", "patterns": ["supply.*demand.*separate|separate.*supply.*demand|供给.*需求.*分开|供應.*需求.*分開", "(?s:demand\\s+side.*supply\\s+side|supply\\s+side.*demand\\s+side)"]},
+    {"id": "match_minimum", "patterns": ["min\\s*\\(.*supply.*demand", "minimum of matched supply and demand", "匹配.*供给.*需求"]},
+    {"id": "cold_start", "patterns": ["cold start|liquidity|冷启动|冷啟動|流动性|流動性", "both sides matching in the same dates and locations|same-place, same-time matches"]},
+    {"id": "insurance_regulation", "patterns": ["insurance.*licen[cs]e|regulat.*insurance|insurance\\s*(?:/|and|or)?\\s*regulat|保险.*牌照|保險.*牌照"]},
+    {"id": "concierge_test", "patterns": ["concierge|manual.*pilot|手工.*试点|人工.*試點"]}
+  ],
+  "forbidden_patterns": [
+    {"id": "tourism_to_revenue", "pattern": "touris(?:t|m).*(?:therefore|proves?).*(?:revenue|viable|orders)", "critical": true}
+  ],
+  "critical_failures": [
+    "Models only customer demand and omits supplier availability.",
+    "Ignores geographic and temporal matching, insurance, or cold start."
+  ],
+  "human_rubric": [
+    "Are supply units and demand orders dimensionally distinct until matching?",
+    "Does the validation plan test both sides in one local time window?"
+  ]
+}

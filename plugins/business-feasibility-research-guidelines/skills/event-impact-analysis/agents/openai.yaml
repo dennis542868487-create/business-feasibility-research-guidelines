@@ -1,0 +1,4 @@
+interface:
+  display_name: "Event Impact Analysis"
+  short_description: "Translate event exposure into capacity-capped demand"
+  default_prompt: "Use $event-impact-analysis to estimate whether this event can materially affect the local business."

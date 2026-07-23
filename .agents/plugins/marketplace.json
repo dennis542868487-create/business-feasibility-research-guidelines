@@ -1,0 +1,20 @@
+{
+  "name": "business-feasibility-research-guidelines",
+  "interface": {
+    "displayName": "Business Feasibility Research Guidelines"
+  },
+  "plugins": [
+    {
+      "name": "business-feasibility-research-guidelines",
+      "source": {
+        "source": "local",
+        "path": "./plugins/business-feasibility-research-guidelines"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
